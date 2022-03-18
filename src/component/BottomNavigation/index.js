@@ -34,6 +34,42 @@ const BottomNavigation = ({state, descriptors, navigation}) => {
             target: route.key,
           });
         };
+
+        const Icon = () => {
+          if (label === 'Home') {
+            return isFocused ? (
+              <Image
+                source={Images.ICHome}
+                style={(styles.active, styles.image)}
+              />
+            ) : (
+              <Image source={Images.ICHome} style={styles.image} />
+            );
+          }
+          if (label === 'Setting') {
+            return isFocused ? (
+              <Image
+                source={Images.ICSetting}
+                style={(styles.active, styles.image)}
+              />
+            ) : (
+              <Image source={Images.ICSetting} style={styles.image} />
+            );
+          }
+          return <Image source={Images.ICHome} style={styles.image} />;
+        };
+        return (
+          <TouchableOpacity
+            key={index}
+            style={styles.btn}
+            onPress={onPress}
+            onLongPress={onLongPress}>
+            <Icon />
+            <Text style={isFocused ? styles.btnTextActive : styles.btnText}>
+              {label}
+            </Text>
+          </TouchableOpacity>
+        );
       })}
     </View>
   );
@@ -41,4 +77,33 @@ const BottomNavigation = ({state, descriptors, navigation}) => {
 
 export default BottomNavigation;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    backgroundColor: '#1F8597',
+    height: 63,
+  },
+  active: {
+    tintColor: '#F4A896',
+  },
+  image: {
+    height: 24,
+    width: 24,
+  },
+  btn: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  btnText: {
+    fontSize: 12,
+    fontWeight: 'bold',
+    color: '#fff',
+  },
+  btnTextActive: {
+    fontSize: 12,
+    fontWeight: 'bold',
+    color: '#F4A896',
+  },
+});
