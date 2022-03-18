@@ -19,18 +19,18 @@ const ProductCrad = ({title, desc, price, image}) => {
         <Text style={styles.price} numberOfLines={1}>
           {currencyFormat(price)}
         </Text>
-      </View>
-      <View style={styles.actionWrapper}>
-        <TouchableOpacity>
-          <View style={[styles.actionButton, styles.actionEdit]}>
-            <Text style={styles.actionText}>Edit</Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <View style={[styles.actionButton, styles.actionDelete]}>
-            <Text style={styles.actionText}>Delete</Text>
-          </View>
-        </TouchableOpacity>
+        <View style={styles.actionWrapper}>
+          <TouchableOpacity>
+            <View style={[styles.actionButton, styles.actionEdit]}>
+              <Text style={styles.actionText}>Edit</Text>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <View style={[styles.actionButton, styles.actionDelete]}>
+              <Text style={styles.actionText}>Delete</Text>
+            </View>
+          </TouchableOpacity>
+        </View>
       </View>
     </View>
   );
