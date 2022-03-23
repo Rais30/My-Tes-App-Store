@@ -32,7 +32,7 @@ const Setting = ({navigation}) => {
       <View style={styles.container}>
         <TouchableOpacity
           style={styles.itemSetting}
-          onPress={() => navigation.navigate('AddProduct')}>
+          onPress={() => navigation.navigate('AddProdacts')}>
           <Text style={styles.itemSettingText}>Add Products</Text>
           <Image source={Images.ICRightArrow} style={styles.rightIcon} />
         </TouchableOpacity>
