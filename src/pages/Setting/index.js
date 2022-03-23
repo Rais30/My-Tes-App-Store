@@ -16,6 +16,7 @@ const mapLink = 'https://goo.gl/maps/MYc5HLEYRxPtKSkc9';
 
 const Setting = ({navigation}) => {
   const mapRedirect = useCallback(async () => {
+    console.log('Map Location');
     const supported = await Linking.canOpenURL(mapLink);
 
     if (supported) {
@@ -78,7 +79,7 @@ const styles = StyleSheet.create({
   itemSettingText: {
     fontSize: 13,
     fontWeight: 'bold',
-    color: '2F2E41',
+    color: '#2F2E41',
   },
   btnWrapper: {
     padding: 16,
