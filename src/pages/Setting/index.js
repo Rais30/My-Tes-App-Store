@@ -20,7 +20,7 @@ const Setting = ({navigation}) => {
     const supported = await Linking.canOpenURL(mapLink);
 
     if (supported) {
-      await Linking.canOpenURL(mapLink);
+      await Linking.openURL(mapLink);
     } else {
       Alert.alert(`tidak tahu cara membuka URL ini : ${mapLink}`);
     }
