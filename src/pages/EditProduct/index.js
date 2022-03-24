@@ -1,7 +1,6 @@
 import {
   StyleSheet,
   Text,
-  View,
   SafeAreaView,
   TouchableOpacity,
   Image,
@@ -14,8 +13,12 @@ import {Header} from '../../component';
 import Images from '../../assets';
 import {launchImageLibrary} from 'react-native-image-picker';
 
-const AddProdacts = ({naviagtion}) => {
+const EditProduct = ({naviagtion, route}) => {
   const [image, setImage] = useState();
+  const [ProductName, setProductName] = useState(route?.params?.title);
+  const [desc, setDesc] = useState(route?.params?.desc);
+  const [price, setPrice] = useState(route?.params?.price);
+  const [imag, setImag] = useState(route?.params?.image);
 
   const Upload = () => {
     launchImageLibrary({mediaType: 'photo', quality: 1}, response => {
@@ -23,46 +26,58 @@ const AddProdacts = ({naviagtion}) => {
         Alert.alert('Oops!!, Batal Memilih Photo.');
       } else {
         setImage(response);
+        setImag(response.assets[0].urionse);
       }
     });
   };
 
   return (
     <SafeAreaView style={styles.page}>
-      <Header title={'Add Product'} />
+      <Header title={'Edit Product'} />
       <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
         <Text style={styles.label}>Product Name</Text>
-        <TextInput style={styles.textInput} />
+        <TextInput
+          style={styles.textInput}
+          value={ProductName}
+          onChangeText={setProductName}
+        />
         <Text style={styles.label}>Description</Text>
         <TextInput
           style={styles.textArea}
           numberOfLines={3}
           multiline
           textAlignVertical="top"
+          value={desc}
+          onChangeText={setDesc}
         />
         <Text style={styles.label}>Price</Text>
-        <TextInput style={styles.textInput} />
+        <TextInput
+          style={styles.textInput}
+          value={price}
+          onChangeText={setPrice}
+          keyboardType="number-pad"
+        />
         <Text style={styles.label}>Photo</Text>
         <TouchableOpacity style={styles.UploadImage} onPress={() => Upload()}>
-          {image?.assets ? (
+          {imag ? (
             <Image
-              source={{uri: image?.assets[0].uri}}
+              source={{uri: imag}}
               resizeMode="cover"
               style={styles.previewImage}
             />
           ) : (
-            <Image source={Images.ICPlus} style={styles.plushIcon} />
+            <Image source={image} style={styles.plushIcon} />
           )}
         </TouchableOpacity>
         <TouchableOpacity style={styles.btnSave}>
-          <Text style={styles.btnSaveText}>Save</Text>
+          <Text style={styles.btnSaveText}>Update</Text>
         </TouchableOpacity>
       </ScrollView>
     </SafeAreaView>
   );
 };
 
-export default AddProdacts;
+export default EditProduct;
 
 const styles = StyleSheet.create({
   page: {
