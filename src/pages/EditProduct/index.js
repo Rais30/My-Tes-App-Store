@@ -58,7 +58,7 @@ const EditProduct = ({naviagtion, route}) => {
           keyboardType="number-pad"
         />
         <Text style={styles.label}>Photo</Text>
-        <TouchableOpacity style={styles.UploadImage} onPress={() => Upload()} >
+        <TouchableOpacity style={styles.UploadImage} onPress={() => Upload()}>
           {imag ? (
             <Image
               source={{uri: imag}}
