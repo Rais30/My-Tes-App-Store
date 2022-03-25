@@ -58,7 +58,7 @@ const EditProduct = ({naviagtion, route}) => {
           keyboardType="number-pad"
         />
         <Text style={styles.label}>Photo</Text>
-        <TouchableOpacity style={styles.UploadImage} onPress={() => Upload()}>
+        <TouchableOpacity style={styles.UploadImage} onPress={() => Upload()} >
           {imag ? (
             <Image
               source={{uri: imag}}
@@ -131,11 +131,12 @@ const styles = StyleSheet.create({
   btnSave: {
     height: 45,
     width: '100%',
-    borderStartColor: '#1F8597',
+    backgroundColor: '#1F8597',
+    // backgroundColor: 'red',
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 8,
-    marginTop: 32,
+    // top:
   },
   btnSaveText: {
     fontSize: 16,
