@@ -10,7 +10,6 @@ import {
 } from 'react-native';
 import React, {useState} from 'react';
 import {Header} from '../../component';
-import Images from '../../assets';
 import {launchImageLibrary} from 'react-native-image-picker';
 
 const EditProduct = ({naviagtion, route}) => {
@@ -66,7 +65,7 @@ const EditProduct = ({naviagtion, route}) => {
               style={styles.previewImage}
             />
           ) : (
-            <Image source={image} style={styles.plushIcon} />
+            <Image source={image} style={styles.previewImage} />
           )}
         </TouchableOpacity>
         <TouchableOpacity style={styles.btnSave}>
@@ -132,11 +131,11 @@ const styles = StyleSheet.create({
     height: 45,
     width: '100%',
     backgroundColor: '#1F8597',
-    // backgroundColor: 'red',
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 8,
-    // top:
+    marginTop: 180,
+    // position: 'absolute',
   },
   btnSaveText: {
     fontSize: 16,

@@ -1,7 +1,6 @@
 import {
   StyleSheet,
   Text,
-  View,
   SafeAreaView,
   TouchableOpacity,
   Image,
@@ -116,11 +115,12 @@ const styles = StyleSheet.create({
   btnSave: {
     height: 45,
     width: '100%',
-    borderStartColor: '#1F8597',
+    backgroundColor: '#1F8597',
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 8,
-    marginTop: 32,
+    marginTop: 180,
+    // position: 'absolute',
   },
   btnSaveText: {
     fontSize: 16,
