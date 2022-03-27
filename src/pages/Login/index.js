@@ -22,7 +22,7 @@ export default function Login({navigation}) {
     <SafeAreaView style={styles.page}>
       <View style={styles.container}>
         <Image source={Images.ILLogin} style={styles.image} />
-        <Text style={styles.title}>Camp404 Store</Text>
+        <Text style={styles.title}>My Store</Text>
         <TextInput
           placeholder="Email"
           keyboardType="email-address"
